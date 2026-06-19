@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Think-It | Features &amp; Deep Synthesis</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Lexend:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .hover-lift {
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 35, 111, 0.05);
+        }
+        .gradient-border-top {
+            position: relative;
+        }
+        .gradient-border-top::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00236f, #396477);
+            border-radius: 16px 16px 0 0;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c5c5d3",
+                        "on-secondary-fixed-variant": "#1e4c5f",
+                        "secondary-fixed": "#bee9ff",
+                        "outline": "#757682",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#233144",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#004a31",
+                        "on-primary-fixed-variant": "#264191",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "secondary-fixed-dim": "#a1cde3",
+                        "error": "#ba1a1a",
+                        "surface-container": "#e6eeff",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-primary-container": "#90a8ff",
+                        "tertiary": "#00311f",
+                        "secondary": "#396477",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "inverse-primary": "#b6c4ff",
+                        "surface": "#f8f9ff",
+                        "surface-dim": "#ccdbf4",
+                        "on-secondary-fixed": "#001f2a",
+                        "surface-container-high": "#dde9ff",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#f8f9ff",
+                        "on-background": "#0d1c2f",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#1e3a8a",
+                        "tertiary-fixed": "#6ffbbe",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#3d687c",
+                        "on-tertiary-fixed": "#002113",
+                        "secondary-container": "#bae6fd",
+                        "primary-fixed": "#dce1ff",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-fixed": "#00164e",
+                        "surface-variant": "#d5e3fd",
+                        "on-primary": "#ffffff",
+                        "primary": "#00236f",
+                        "on-surface-variant": "#444651",
+                        "inverse-on-surface": "#ebf1ff",
+                        "on-surface": "#0d1c2f",
+                        "surface-container-highest": "#d5e3fd",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary-container": "#27c38a",
+                        "surface-tint": "#4059aa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px",
+                        "unit": "8px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-xl": ["Lexend"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Lexend"],
+                        "headline-lg-mobile": ["Lexend"],
+                        "headline-lg": ["Lexend"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "30px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto bg-surface/80 backdrop-blur-md shadow-sm">
+<a href="index.html" class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-bold text-primary">Think-It</span>
+</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md transition-colors duration-200" href="features.html">Features</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md transition-colors duration-200" href="pricing.html">Pricing</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md transition-colors duration-200" href="index.html#how-it-works">How It Works</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary font-label-md transition-colors px-4 py-2">Login</button>
+<a href="pricing.html" class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md hover:bg-primary-container hover:scale-95 transition-all duration-150 text-center">Get Started</a>
+</div>
+</nav>
+<main class="pt-32 pb-20">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop text-center mb-24">
+<h1 class="font-headline-xl text-headline-xl text-on-background mb-6">Elevate your intellectual <span class="text-primary">synthesis</span>.</h1>
+<p class="max-w-2xl mx-auto font-body-lg text-body-lg text-on-surface-variant mb-12">
+                Move beyond static notes. Think-It uses advanced AI to transform information into structured knowledge, helping you visualize connections and master complex topics.
+            </p>
+<!-- Visual Transformation Graphic (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center mt-16 p-8 bg-surface-container-low rounded-[32px] border border-outline-variant/30">
+<!-- Raw Input -->
+<div class="md:col-span-4 bg-white p-6 rounded-2xl shadow-sm text-left h-full">
+<div class="flex items-center gap-2 mb-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">description</span>
+<span class="text-xs font-label-md uppercase tracking-wider">Raw Input</span>
+</div>
+<div class="space-y-3 opacity-60">
+<div class="h-3 bg-surface-container w-full rounded"></div>
+<div class="h-3 bg-surface-container w-11/12 rounded"></div>
+<div class="h-3 bg-surface-container w-full rounded"></div>
+<div class="h-3 bg-surface-container w-10/12 rounded"></div>
+<div class="h-3 bg-surface-container w-full rounded"></div>
+<div class="h-3 bg-surface-container w-4/5 rounded"></div>
+</div>
+<p class="mt-6 text-sm text-on-surface-variant italic">"The process of neural plasticity involves the strengthening of synaptic connections..."</p>
+</div>
+<!-- Transformation Arrow -->
+<div class="md:col-span-1 flex justify-center py-4 md:py-0">
+<div class="bg-primary-fixed p-3 rounded-full flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-primary text-3xl">trending_flat</span>
+</div>
+</div>
+<!-- Beautiful Mind-Map / Summary -->
+<div class="md:col-span-7 h-full relative overflow-hidden">
+<div class="bg-white p-6 rounded-2xl shadow-sm h-full flex flex-col items-center justify-center relative">
+<div class="absolute top-4 left-4 flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+<span class="text-xs font-label-md uppercase tracking-wider">Synthesis Engine</span>
+</div>
+<!-- Visual Mind-map Nodes (Simplified) -->
+<div class="relative w-full h-48 flex items-center justify-center">
+<div class="z-10 bg-primary text-on-primary px-6 py-3 rounded-xl shadow-md font-bold text-sm">Neural Plasticity</div>
+<!-- Connecting lines -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none opacity-20" preserveaspectratio="none">
+<line stroke="#00236f" stroke-width="2" x1="50%" x2="25%" y1="50%" y2="25%"></line>
+<line stroke="#00236f" stroke-width="2" x1="50%" x2="75%" y1="50%" y2="25%"></line>
+<line stroke="#00236f" stroke-width="2" x1="50%" x2="50%" y1="50%" y2="80%"></line>
+</svg>
+<div class="absolute top-4 left-1/4 bg-secondary-container text-on-secondary-container px-4 py-2 rounded-lg text-xs font-semibold">Synaptic Strength</div>
+<div class="absolute top-4 right-1/4 bg-tertiary-container text-on-tertiary-container px-4 py-2 rounded-lg text-xs font-semibold">Long-term Potentiation</div>
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-surface-container-high text-on-surface px-4 py-2 rounded-lg text-xs font-semibold">Brain Adaptation</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Details Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-20 space-y-32">
+<!-- AI-Powered Notes -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-6">
+<div class="w-12 h-12 bg-primary-fixed flex items-center justify-center rounded-xl">
+<span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg">AI-Powered Notes</h2>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">
+                        Say goodbye to tedious highlighting. Our "Smart Extraction" engine identifies core concepts, definitions, and supporting evidence in real-time as you upload PDFs, research papers, or meeting transcripts.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-container mt-1">check_circle</span>
+<span class="font-body-md text-on-background">Automated key term glossaries generated from any source.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-container mt-1">check_circle</span>
+<span class="font-body-md text-on-background">Context-aware summaries that preserve technical accuracy.</span>
+</li>
+</ul>
+</div>
+<div class="glass-card p-10 rounded-[40px] shadow-sm relative hover-lift group overflow-hidden">
+<div class="absolute -right-10 -bottom-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl transition-transform group-hover:scale-125"></div>
+<div class="relative z-10 space-y-4">
+<div class="bg-white p-6 rounded-2xl border border-outline-variant/30 shadow-sm">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-sm font-label-md text-on-surface-variant">Extracted Insight</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-background leading-snug">
+                                "Epigenetics: The study of heritable changes in gene expression that do not involve alterations to the DNA sequence."
+                            </p>
+</div>
+<div class="flex gap-4">
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-4 py-1 rounded-full text-xs font-semibold">Biological Link</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-4 py-1 rounded-full text-xs font-semibold">Molecular Logic</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Mind-Map Generation -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="lg:order-2 space-y-6">
+<div class="w-12 h-12 bg-secondary-container flex items-center justify-center rounded-xl">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl">account_tree</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg">Mind-Map Generation</h2>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">
+                        Visualize the architecture of your ideas. Think-It automatically generates interactive mind-maps that reveal hierarchies and cross-disciplinary connections you might have missed in linear text.
+                    </p>
+<div class="flex items-center gap-6 pt-4">
+<div class="text-center">
+<div class="text-headline-md text-primary font-bold">1:1</div>
+<div class="text-xs font-label-sm text-on-surface-variant uppercase">Source Linkage</div>
+</div>
+<div class="h-10 w-[1px] bg-outline-variant"></div>
+<div class="text-center">
+<div class="text-headline-md text-primary font-bold">Auto</div>
+<div class="text-xs font-label-sm text-on-surface-variant uppercase">Spatial Layout</div>
+</div>
+</div>
+</div>
+<div class="lg:order-1 relative">
+<div class="absolute inset-0 bg-secondary/10 rounded-[40px] rotate-2"></div>
+<div class="relative bg-white border border-outline-variant/40 p-8 rounded-[40px] shadow-sm hover-lift">
+<div class="w-full aspect-video rounded-3xl bg-cover bg-center" data-alt="A clean, minimalist 3D rendering of a futuristic mind-map node structure with translucent glowing bubbles and connecting fiber-optic lines. The style is modern academic with professional blue and teal highlights, set against a soft white studio background with ambient lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD1hxfGC_MTCJ4BNacE9zrFNi29bD2NntvNaQ3uxjM-hgNYVTvwFAtkTe5fD5Tlaw9hSdJnP8pNApXBf_EWK4gB68gdSyD9KHrFczfBIWIl_uM-MZWv4Jvv1WlfKsDARuc4S-SbmakQoAHMMCAp0fInpMkJsamEYDNkj5myRi_XGdPfv7OSUAyk6tZo2quS_lXFqxMtPxw__v2IpvWomk3ZHp2JyrxO5xJoILRLKfNN4AdQ0mN-e52J2x1aE9We7XRTnUdFOsA2SJh2')"></div>
+</div>
+</div>
+</div>
+<!-- Interactive Quizzes -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-6">
+<div class="w-12 h-12 bg-tertiary-container flex items-center justify-center rounded-xl">
+<span class="material-symbols-outlined text-on-tertiary-container text-3xl">quiz</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg">Interactive Quizzes</h2>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">
+                        Don't just read—retain. Think-It crafts personalized assessments based on your notes to challenge your comprehension and identify gaps in your knowledge through active recall.
+                    </p>
+<button class="flex items-center gap-2 text-primary font-label-md group">
+                        See how it adapts
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4">
+<div class="bg-surface-container p-6 rounded-2xl hover-lift">
+<span class="material-symbols-outlined text-primary mb-2">style</span>
+<h4 class="font-bold text-on-surface mb-1">Flashcards</h4>
+<p class="text-xs text-on-surface-variant">Spaced repetition for long-term storage.</p>
+</div>
+<div class="bg-white border border-outline-variant p-6 rounded-2xl hover-lift">
+<span class="material-symbols-outlined text-secondary mb-2">edit_note</span>
+<h4 class="font-bold text-on-surface mb-1">Open-Ended</h4>
+<p class="text-xs text-on-surface-variant">Deep conceptual questioning.</p>
+</div>
+</div>
+<div class="space-y-4 pt-8">
+<div class="bg-white border border-outline-variant p-6 rounded-2xl hover-lift">
+<span class="material-symbols-outlined text-tertiary-container mb-2">checklist</span>
+<h4 class="font-bold text-on-surface mb-1">Multiple Choice</h4>
+<p class="text-xs text-on-surface-variant">Rapid knowledge validation.</p>
+</div>
+<div class="bg-primary/5 p-6 rounded-2xl hover-lift">
+<span class="material-symbols-outlined text-primary mb-2">trending_up</span>
+<h4 class="font-bold text-on-surface mb-1">Progress Tracker</h4>
+<p class="text-xs text-on-surface-variant">See your mastery grow.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="bg-on-background text-on-primary py-24 mt-20">
+<div class="max-w-container-max mx-auto px-margin-desktop text-center">
+<h2 class="font-headline-lg text-headline-lg mb-16">The Think-It Workflow</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+<!-- Connector line for desktop -->
+<div class="hidden md:block absolute top-1/4 left-1/4 right-1/4 h-[2px] bg-primary/20 -z-0"></div>
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-20 h-20 bg-primary-container rounded-full flex items-center justify-center mb-6 border-4 border-on-background">
+<span class="material-symbols-outlined text-on-primary-container text-4xl">upload_file</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3">1. Upload</h3>
+<p class="text-surface-variant font-body-md">Import documents, paste text, or link web articles.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-20 h-20 bg-secondary-container rounded-full flex items-center justify-center mb-6 border-4 border-on-background">
+<span class="material-symbols-outlined text-on-secondary-container text-4xl">bolt</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3">2. Synthesize</h3>
+<p class="text-surface-variant font-body-md">Our AI maps the logic and extracts core themes.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-20 h-20 bg-tertiary-fixed rounded-full flex items-center justify-center mb-6 border-4 border-on-background">
+<span class="material-symbols-outlined text-on-tertiary-fixed text-4xl">auto_fix_high</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3">3. Master</h3>
+<p class="text-surface-variant font-body-md">Interact with your new knowledge structures.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-32 text-center">
+<div class="bg-surface-container-high rounded-[48px] p-16 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<!-- Subtle background decoration -->
+<div class="absolute top-0 left-0 w-96 h-96 bg-primary blur-[120px]"></div>
+<div class="absolute bottom-0 right-0 w-96 h-96 bg-secondary blur-[120px]"></div>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline-xl text-headline-xl text-on-background mb-6">Ready to think deeper?</h2>
+<p class="text-body-lg text-on-surface-variant max-w-xl mx-auto mb-10">
+                        Join thousands of researchers and students who are transforming information overload into intellectual advantage.
+                    </p>
+<div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+<a href="pricing.html" class="bg-primary text-on-primary px-10 py-4 rounded-full font-label-md text-lg hover:bg-primary-container shadow-lg transition-all text-center">Start For Free</a>
+<button class="bg-white text-on-background border border-outline-variant px-10 py-4 rounded-full font-label-md text-lg hover:bg-surface-container-low transition-all">Request a Demo</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-center gap-gutter bg-surface-container border-t border-outline-variant">
+<div class="flex flex-col items-center md:items-start gap-2">
+<a href="index.html" class="font-headline-md text-headline-md font-bold text-primary">Think-It</a>
+<p class="text-on-surface-variant font-label-sm text-label-sm">© 2024 Think-It AI. Empowering deep synthesis.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-label-sm" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-label-sm" href="#">Careers</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-label-sm" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-label-sm" href="#">Terms</a>
+</div>
+</footer>
+<script>
+        // Simple scroll reveal effect for cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.hover-lift').forEach(card => {
+            card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(card);
+        });
+    </script>
+</body></html>

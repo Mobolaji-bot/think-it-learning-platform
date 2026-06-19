@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Think-It | Pricing & Customization</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#c5c5d3",
+                    "on-secondary-fixed-variant": "#1e4c5f",
+                    "secondary-fixed": "#bee9ff",
+                    "outline": "#757682",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#233144",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#004a31",
+                    "on-primary-fixed-variant": "#264191",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "secondary-fixed-dim": "#a1cde3",
+                    "error": "#ba1a1a",
+                    "surface-container": "#e6eeff",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-primary-container": "#90a8ff",
+                    "tertiary": "#00311f",
+                    "secondary": "#396477",
+                    "primary-fixed-dim": "#b6c4ff",
+                    "inverse-primary": "#b6c4ff",
+                    "surface": "#f8f9ff",
+                    "surface-dim": "#ccdbf4",
+                    "on-secondary-fixed": "#001f2a",
+                    "surface-container-high": "#dde9ff",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "background": "#f8f9ff",
+                    "on-background": "#0d1c2f",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#1e3a8a",
+                    "tertiary-fixed": "#6ffbbe",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#3d687c",
+                    "on-tertiary-fixed": "#002113",
+                    "secondary-container": "#bae6fd",
+                    "primary-fixed": "#dce1ff",
+                    "surface-container-low": "#eff4ff",
+                    "on-primary-fixed": "#00164e",
+                    "surface-variant": "#d5e3fd",
+                    "on-primary": "#ffffff",
+                    "primary": "#00236f",
+                    "on-surface-variant": "#444651",
+                    "inverse-on-surface": "#ebf1ff",
+                    "on-surface": "#0d1c2f",
+                    "surface-container-highest": "#d5e3fd",
+                    "surface-bright": "#f8f9ff",
+                    "on-tertiary-container": "#27c38a",
+                    "surface-tint": "#4059aa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "margin-desktop": "40px",
+                    "unit": "8px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-xl": ["Lexend"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Lexend"],
+                    "headline-lg-mobile": ["Lexend"],
+                    "headline-lg": ["Lexend"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "30px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto bg-surface/80 dark:bg-surface/80 backdrop-blur-md shadow-sm">
+<a href="index.html" class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-bold text-primary">Think-It</span>
+</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="features.html">Features</a>
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1 transition-colors duration-200" href="pricing.html">Pricing</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html#how-it-works">How It Works</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200">Login</button>
+<a href="pricing.html" class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:scale-95 duration-150 transition-transform text-center">Get Started</a>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-margin-desktop max-w-container-max mx-auto">
+<!-- Hero Header -->
+<header class="text-center mb-16">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-4">Focus on Mastery. We'll handle the rest.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Advanced synthesis tools tailored for students and researchers. Choose a plan that fuels your academic journey.
+            </p>
+</header>
+<!-- Pricing Toggle (Logic for Visual Only) -->
+<div class="flex justify-center items-center gap-4 mb-12">
+<span class="font-label-md text-label-md text-on-surface-variant">Monthly</span>
+<button class="relative w-14 h-7 bg-surface-container-high rounded-full p-1 transition-colors" id="billing-toggle">
+<div class="w-5 h-5 bg-primary rounded-full transition-transform translate-x-7"></div>
+</button>
+<span class="font-label-md text-label-md text-primary font-bold">Yearly <span class="ml-2 text-xs bg-tertiary-container text-on-tertiary-container px-2 py-0.5 rounded-full">Save 33%</span></span>
+</div>
+<!-- Pricing Table -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-24 max-w-4xl mx-auto">
+<!-- Monthly Plan -->
+<div class="bg-surface-container-lowest p-unit*4 p-8 rounded-xl border border-outline-variant hover:shadow-lg transition-shadow duration-300 relative overflow-hidden">
+<div class="mb-8">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Monthly</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Flexible access for short-term projects.</p>
+</div>
+<div class="mb-8">
+<span class="text-4xl font-bold text-primary">$9.99</span>
+<span class="text-on-surface-variant">/month</span>
+</div>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm">check_circle</span>
+<span class="text-body-md">Unlimited AI Summaries</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm">check_circle</span>
+<span class="text-body-md">Basic Mind Mapping</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm">check_circle</span>
+<span class="text-body-md">5GB Cloud Storage</span>
+</li>
+</ul>
+<a href="checkout.html?plan=monthly" class="block w-full py-4 rounded-lg bg-surface-container-high text-primary font-label-md text-label-md hover:bg-surface-variant transition-colors text-center">Choose This Plan</a>
+</div>
+<!-- Yearly Plan (Best Value) -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border-2 border-primary shadow-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 bg-primary text-on-primary px-4 py-1 font-label-sm text-label-sm rounded-bl-xl">Best Value</div>
+<div class="mb-8">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Yearly</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">The choice for serious researchers.</p>
+</div>
+<div class="mb-8">
+<span class="text-4xl font-bold text-primary">$79.99</span>
+<span class="text-on-surface-variant">/year</span>
+</div>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-body-md font-medium">Everything in Monthly</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-body-md">Advanced Graph Synthesis</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-body-md">Unlimited PDF Synthesis</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-body-md">Priority AI Processing</span>
+</li>
+</ul>
+<a href="checkout.html?plan=yearly" class="block w-full py-4 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:scale-105 transition-transform text-center">Choose This Plan</a>
+</div>
+</div>
+<!-- Customization Section: Tailor Your Experience -->
+<section class="bg-surface-container-low rounded-3xl p-margin-desktop border border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="md:w-1/3">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Tailor Your Experience</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Our AI adapts to how you learn best. Personalize these settings to get summaries and visualizations that speak your language.
+                    </p>
+<div class="mt-8 relative h-48 rounded-2xl overflow-hidden group">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A macro shot of high-quality fountain pen ink swirling in clear water, transitioning from deep sapphire blue to soft sky blue. The lighting is bright and laboratory-clean, reflecting an academic and precise aesthetic with minimalist depth and clarity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5XumvrB9lULkR7iJVJVF8so8WyMqZzDnl9WtKmj9esyi4mDwEH7meFa6ft0-3fxRTCrcnsDHAd8caMVCNY1lzBpBhnLn6a8dPJCpIx7Z1OljUA4IFkJCZDdkLmY1xppqkKytgGPVIy0Tc39YBcgMaY2oR9wvvBykcWU2D3DDcEfuiePSNxV77-z5HJQbDj4SrZiqVNrjBzCYO7D47D0nNsf-qi-4YoVuy2IVB9dqgz8hAMYlKa1AORfGq6dK9Fo2tZb_wShwS96Bk')"></div>
+<div class="absolute inset-0 bg-primary/10 backdrop-blur-[2px]"></div>
+</div>
+</div>
+<div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Study Style Selection -->
+<div class="space-y-6">
+<h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Preferred Study Style</h4>
+<div class="flex flex-col gap-3">
+<label class="group flex items-center justify-between p-4 bg-surface-container-lowest border border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">visibility</span>
+<span class="font-label-md text-label-md">Visual</span>
+</div>
+<input checked="" class="w-5 h-5 text-primary border-outline-variant focus:ring-primary" name="style" type="radio"/>
+</label>
+<label class="group flex items-center justify-between p-4 bg-surface-container-lowest border border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">article</span>
+<span class="font-label-md text-label-md">Textual</span>
+</div>
+<input class="w-5 h-5 text-primary border-outline-variant focus:ring-primary" name="style" type="radio"/>
+</label>
+<label class="group flex items-center justify-between p-4 bg-surface-container-lowest border border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">headphones</span>
+<span class="font-label-md text-label-md">Auditory</span>
+</div>
+<input class="w-5 h-5 text-primary border-outline-variant focus:ring-primary" name="style" type="radio"/>
+</label>
+</div>
+</div>
+<!-- Subjects of Interest -->
+<div class="space-y-6">
+<h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Subjects of Interest</h4>
+<div class="flex flex-wrap gap-3">
+<button class="px-4 py-2 rounded-full border border-primary bg-primary text-on-primary font-label-md text-label-md transition-all">STEM</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md hover:border-primary hover:text-primary transition-all">Humanities</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md hover:border-primary hover:text-primary transition-all">Business</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md hover:border-primary hover:text-primary transition-all">Law</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md hover:border-primary hover:text-primary transition-all">Medicine</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md hover:border-primary hover:text-primary transition-all">Art & Design</button>
+</div>
+<div class="p-4 bg-surface-container rounded-xl">
+<p class="font-label-sm text-label-sm text-secondary-container bg-on-secondary-container p-2 rounded inline-block mb-2">AI Preview</p>
+<p class="font-body-md text-body-md italic text-on-surface-variant">"As a Visual STEM learner, we will prioritize Mind Maps and Equation Breakdowns in your dashboard."</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-center gap-gutter bg-surface-container border-t border-outline-variant">
+<div class="flex flex-col items-center md:items-start gap-2">
+<a href="index.html" class="font-headline-md text-headline-md font-bold text-primary">Think-It</a>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Think-It AI. Empowering deep synthesis.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-all" href="#">About</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-all" href="#">Careers</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-all" href="#">Privacy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-all" href="#">Terms</a>
+</div>
+</footer>
+<script>
+        // Simple billing toggle interaction
+        const toggleBtn = document.getElementById('billing-toggle');
+        let isYearly = true;
+
+        toggleBtn.addEventListener('click', () => {
+            isYearly = !isYearly;
+            const dot = toggleBtn.querySelector('div');
+            if (isYearly) {
+                dot.classList.remove('translate-x-0');
+                dot.classList.add('translate-x-7');
+                toggleBtn.classList.remove('bg-surface-container-high');
+                toggleBtn.classList.add('bg-primary-container');
+            } else {
+                dot.classList.remove('translate-x-7');
+                dot.classList.add('translate-x-0');
+                toggleBtn.classList.remove('bg-primary-container');
+                toggleBtn.classList.add('bg-surface-container-high');
+            }
+        });
+
+        // Toggle logic for subject buttons
+        const subjectButtons = document.querySelectorAll('section button');
+        subjectButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                if(btn.classList.contains('bg-primary')) {
+                    btn.classList.remove('bg-primary', 'text-on-primary', 'border-primary');
+                    btn.classList.add('bg-surface-container-lowest', 'text-on-surface-variant', 'border-outline-variant');
+                } else {
+                    btn.classList.add('bg-primary', 'text-on-primary', 'border-primary');
+                    btn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant', 'border-outline-variant');
+                }
+            });
+        });
+    </script>
+</body></html>
